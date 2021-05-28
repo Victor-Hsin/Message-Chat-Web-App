@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main>
+        <form>
+            <div class="input-field">
+                <label for="userName">Username</label><br>
+                <input type="text" name="userName" ,="" id="userName"><br>
+            </div>
+            
+            <div class="input-field">
+                <label for="password">Password</label><br>
+                <input type="password" name="password" ,="" id="password"><br>
+            </div>
+            
+            <button type="button" id="loginBtn" class="btn waves-effect" onclick="userLogin()">Login</button>
+            <button type="button" id="registerBtn" class="btn waves-effect" style="background-color: #adada9;" onclick="signUpNewAccount()">Sign Up</button>
+        </form>
+    </main>
+    <script src="./js/functions.js"></script>
+</body>
+</html>
