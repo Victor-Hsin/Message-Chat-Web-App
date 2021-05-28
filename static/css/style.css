@@ -43,3 +43,7 @@ button {
 #loginBtn {
     background-color: #f7a628;
 }
+
+#msg {
+    color: red;
+}

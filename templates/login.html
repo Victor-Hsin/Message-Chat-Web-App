@@ -11,6 +11,7 @@
 <body>
     <main>
         <form id="userInfo-form" action="{{ url_for('login') }}" method="post">
+            <div id="msg">{{ msg }}</div>
             <div class="input-field">
                 <label for="username">Username</label><br>
                 <input type="text" name="username" ,="" id="username" required><br>
@@ -22,9 +23,9 @@
             </div>
             
             <button type="submit" id="loginBtn" class="btn waves-effect">Login</button>
-            <button type="button" id="registerBtn" class="btn waves-effect" style="background-color: #adada9;" onclick="signUpNewAccount()">Sign Up</button>
+            <button type="submit" id="registerBtn" class="btn waves-effect" style="background-color: #adada9;" formaction="{{ url_for('signUp') }}">Sign Up</button>
         </form>
     </main>
-    <script src="/static/js/functions.js"></script>
+    <script type="text/javascript" src="/static/js/functions.js"></script>
 </body>
 </html>

@@ -40,14 +40,45 @@ def login():
             session["loggedin"] = True
             session["id"] = user["user_id"]
             session["username"] = username
-            return redirect(url_for("messageApp"))
-    return render_template('login.html')
+            return redirect(url_for("messagePage"))
+        else:
+            msg = "Incorrect username or password. Please try again."
+    return render_template('login.html', msg=msg)
 
 
-@app.route('/messageApp', methods=["GET"])
-def messageApp():
+@app.route('/sign-up', methods=["POST"])
+def signUp():
+    # connect to database
+    conn = mysql.connect()
+    cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+    # provide an error message if things go wrong
+    msg = ''
+    if request.method == "POST" and "username" in request.form and 'password' in request.form:
+        username = request.form['username']
+        password = request.form['password']
+        # check whether the username is already taken or not
+        cursor.execute("""
+            SELECT *
+              FROM user
+             WHERE username = %s
+        """, (username))    
+        user = cursor.fetchone()
+
+        if user == None:
+            cursor.execute("INSERT INTO user(username, password) VALUES(%s, %s)", (username, password)) 
+            conn.commit()
+            msg = "Sign up sucessfully! Please enter the username and password again to log in."
+        else:
+            msg = "This username was already taken. Please try another username."
+
+    return render_template('login.html', msg=msg)
+
+
+@app.route('/message-page', methods=["GET"])
+def messagePage():
     if "loggedin" in session:
-        return render_template('messageApp.html')
+        return render_template('message-page.html')
     return redirect(url_for("login"))
 
 
