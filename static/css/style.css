@@ -28,7 +28,7 @@ button {
 }
 
 
-/* label underline focus color */
+/* input underline focus color */
 .input-field input[type=text]:focus {
     border-bottom: 1px solid #f7a628 !important;
     box-shadow: 0 1px 0 0 #f7a628 !important;

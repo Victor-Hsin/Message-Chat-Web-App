@@ -1,12 +1,9 @@
-const userName = document.querySelector("#userName")
+const userName = document.querySelector("#username")
 const password = document.querySelector("#password")
-// const loginBtn = document.querySelector("#loginBtn");
-// const registerBtn = document.querySelector("#registerBtn");
+const loginBtn = document.querySelector("#loginBtn")
+const registerBtn = document.querySelector("#registerBtn")
+const form = document.querySelector("#userInfo-form")
 
-function userLogin(){
-    console.log("logged in")
-    // to-do: fetch flask API to check the username and password of the user
-}
 
 function signUpNewAccount(){
     // to-do: fetch flask API to register and login the user

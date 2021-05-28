@@ -10,18 +10,18 @@
 </head>
 <body>
     <main>
-        <form>
+        <form id="userInfo-form" action="{{ url_for('login') }}" method="post">
             <div class="input-field">
-                <label for="userName">Username</label><br>
-                <input type="text" name="userName" ,="" id="userName"><br>
+                <label for="username">Username</label><br>
+                <input type="text" name="username" ,="" id="username" required><br>
             </div>
             
             <div class="input-field">
                 <label for="password">Password</label><br>
-                <input type="password" name="password" ,="" id="password"><br>
+                <input type="password" name="password" ,="" id="password" required><br>
             </div>
             
-            <button type="button" id="loginBtn" class="btn waves-effect" onclick="userLogin()">Login</button>
+            <button type="submit" id="loginBtn" class="btn waves-effect">Login</button>
             <button type="button" id="registerBtn" class="btn waves-effect" style="background-color: #adada9;" onclick="signUpNewAccount()">Sign Up</button>
         </form>
     </main>
