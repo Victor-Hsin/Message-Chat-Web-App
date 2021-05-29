@@ -11,8 +11,15 @@
 <body>
     <main id="center-main">
         <div id="message-window">
-            <div id="messages-area">
-
+            <div class="scrollable" id="messages-area">
+                <div class="chat-message">
+                    <span style="color: #f7a628;">victorhsin</span><br>
+                    <span style="color: #9E9E9E;">Hello World! This is the first message.</span> 
+                </div>
+                <div class="chat-message">
+                    <span style="color: #f7a628;">ryancheng</span><br>
+                    <span style="color: #9E9E9E;">I'm a fan of Derrick Rose. He's the youngest MVP in NBA.</span> 
+                </div>
             </div>
             <div class="input-field" id="input-area">
                 <textarea name="input-message" id="input-message" class="materialize-textarea" placeholder="Type your message here"></textarea>
@@ -20,5 +27,6 @@
             <button type="button" id="send-message-btn" class="btn waves-effect">Send</button>
         </div>
     </main>
+    <script type="text/javascript" src="/static/js/messagePage.js"></script>
 </body>
 </html>

@@ -10,12 +10,14 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #fcfbf9;
 }
 
 form {
     width: 405px;
     border: solid 1px #EBEBEB;
     padding: 5rem;
+    background-color: white;
 }
 
 button {

@@ -14,10 +14,18 @@ button {
     background-color: #f7a628;
 }
 
+.scrollable {
+    overflow: scroll;
+}
+
 /* input underline focus color */
 .input-field textarea:focus {
     border-bottom: 1px solid #f7a628 !important;
     box-shadow: 0 1px 0 0 #f7a628 !important;
+}
+
+.chat-message {
+    margin: 20px;
 }
 
 #center-main {
@@ -27,6 +35,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #fcfbf9;
 }
 
 #messages-area {
@@ -35,7 +44,7 @@ button {
     left: 20px;
     right: 20px;
     bottom: 100px;
-    /* border-bottom: solid 1px #EBEBEB; */
+    background-color: #fffefd;
 }
 
 #message-window {
@@ -44,6 +53,7 @@ button {
     height: 80vh;
     border: solid 1px #EBEBEB;
     padding: 5rem;
+    background-color: white;
 }
 
 #input-area {

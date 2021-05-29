@@ -1,17 +1,7 @@
-const userName = document.querySelector("#username")
-const password = document.querySelector("#password")
-const loginBtn = document.querySelector("#loginBtn")
-const registerBtn = document.querySelector("#registerBtn")
-const msg = document.querySelector("#msg")
-const msgText = msg.innerHTML
-
-// check msg variable, and change the text to corresponding color.
-if (msgText == "Sign up sucessfully! Please enter the username and password again to log in.") {
-    msg.setAttribute("style", "color: green;")
-} else {
-    msg.setAttribute("style", "color: red;")
+function appendMessage(userName, message) {
+    let messagesArea = document.querySelector("#messages-area")
+    messagesArea.innerHTML += `<div class="chat-message">` +
+                                `<span style="color: #f7a628;">${userName}</span><br>` + 
+                                `<span style="color: #9E9E9E;">${message}</span>`  +
+                              `</div>`
 }
-
-
-
-
