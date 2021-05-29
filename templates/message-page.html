@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/messagePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Message APP</title>
 </head>
 <body>
-    this is message page
+    <main id="center-main">
+        <div id="message-window">
+            <div id="messages-area">
+
+            </div>
+            <div class="input-field" id="input-area">
+                <textarea name="input-message" id="input-message" class="materialize-textarea" placeholder="Type your message here"></textarea>
+            </div>
+            <button type="button" id="send-message-btn" class="btn waves-effect">Send</button>
+        </div>
+    </main>
 </body>
 </html>

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/login.css">
 </head>
 <body>
     <main>
-        <form id="userInfo-form" action="{{ url_for('login') }}" method="post">
+        <form action="{{ url_for('login') }}" method="post">
             <div id="msg">{{ msg }}</div>
             <div class="input-field">
                 <label for="username">Username</label><br>
@@ -22,8 +22,8 @@
                 <input type="password" name="password" ,="" id="password" required><br>
             </div>
             
-            <button type="submit" id="loginBtn" class="btn waves-effect">Login</button>
-            <button type="submit" id="registerBtn" class="btn waves-effect" style="background-color: #adada9;" formaction="{{ url_for('signUp') }}">Sign Up</button>
+            <button type="submit" id="login-btn" class="btn waves-effect">Login</button>
+            <button type="submit" id="register-btn" class="btn waves-effect" style="background-color: #adada9;" formaction="{{ url_for('signUp') }}">Sign Up</button>
         </form>
     </main>
     <script type="text/javascript" src="/static/js/functions.js"></script>
