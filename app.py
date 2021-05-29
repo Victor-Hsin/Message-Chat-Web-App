@@ -1,6 +1,7 @@
-from flask import Flask, request, session, redirect, url_for, render_template
+from flask import Flask, request, session, redirect, url_for, render_template, jsonify
 from flaskext.mysql import MySQL
 import pymysql 
+import time
 
 app = Flask(__name__)
 app.secret_key = "evou\x878\xa0\xe0FF\x8e~\x92\xf1xvCE\xe0\x15\x81\x17=\xf1"
@@ -78,11 +79,38 @@ def messagePage():
         return render_template('message-page.html')
     return redirect(url_for("login"))
 
+
 @app.route('/messages', methods=['GET', 'POST'])
 def messages():
     # connect to database
     conn = mysql.connect()
-    cursor = conn.cursor(pymysql.cursors.DictCursor)    
+    cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+    msg = ""
+    if request.method == "POST":
+        requestData = request.get_json()
+        if "userId" in requestData and "message" in requestData:
+            userId = requestData['userId']
+            inputMessage = requestData['message']
+            currTime = time.strftime('%Y-%m-%d %H:%M:%S')
+            cursor.execute("INSERT INTO message(user_id, creation_date, message) VALUES(%s, %s, %s)", (userId, currTime, inputMessage))
+            conn.commit()
+            msg = "sucess"
+        else:
+            msg = "userId or username data was not provided."
+        return jsonify({"message": msg})
+    elif request.method == "GET":
+        cursor.execute("""
+            SELECT u.username, m.message
+              FROM message AS m
+                   INNER JOIN user AS u
+                   ON m.user_id = u.user_id
+          ORDER BY m.creation_date
+        """)
+        userMessages = cursor.fetchall()
+        return jsonify({"userMessages": userMessages})
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
