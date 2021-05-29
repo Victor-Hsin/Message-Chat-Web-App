@@ -24,7 +24,7 @@
             <div class="input-field" id="input-area">
                 <textarea name="input-message" id="input-message" class="materialize-textarea" placeholder="Type your message here"></textarea>
             </div>
-            <button type="button" id="send-message-btn" class="btn waves-effect">Send</button>
+            <button type="button" id="send-message-btn" class="btn waves-effect" onclick="postAndStoreMessage( '{{ session['username'] }}', {{ session['userId'] }})">Send</button>
         </div>
     </main>
     <script type="text/javascript" src="/static/js/messagePage.js"></script>

@@ -36,7 +36,7 @@ def login():
 
         if user:
             session["loggedin"] = True
-            session["id"] = user["user_id"]
+            session["userId"] = user["user_id"]
             session["username"] = username
             return redirect(url_for("messagePage"))
         else:
@@ -78,6 +78,11 @@ def messagePage():
         return render_template('message-page.html')
     return redirect(url_for("login"))
 
+@app.route('/messages', methods=['GET', 'POST'])
+def messages():
+    # connect to database
+    conn = mysql.connect()
+    cursor = conn.cursor(pymysql.cursors.DictCursor)    
 
 if __name__ == '__main__':
     app.run(debug=True)
