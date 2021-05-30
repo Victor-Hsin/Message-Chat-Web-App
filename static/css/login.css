@@ -24,11 +24,16 @@ button {
     margin-top: 2rem;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
 
 .input-field label {
     font-size: 12px;
 }
-
 
 /* input underline focus color */
 .input-field input[type=text]:focus {
