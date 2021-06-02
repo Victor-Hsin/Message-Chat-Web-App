@@ -81,6 +81,15 @@ def login():
     return render_template('login.html', msg=msg)
 
 
+@app.route('/logout', methods=['GET'])
+def logOut():
+    # remove session variables
+    session.pop("loggedin", None) 
+    session.pop("userId", None)
+    session.pop("username", None)
+    return render_template('login.html')
+
+
 @app.route('/sign-up', methods=["POST"])
 def signUp():
     # connect to database
