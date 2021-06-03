@@ -22,7 +22,7 @@ button {
 }
 
 .scrollable {
-    overflow: scroll;
+    overflow: auto;
 }
 
 /* input underline focus color */
