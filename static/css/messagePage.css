@@ -7,20 +7,6 @@ button {
     margin-top: 2rem;
 }
 
-#send-message-btn {
-    position: absolute;
-    right: 15px;
-    bottom: 30px;
-    background-color: #f7a628;
-}
-
-#logout-btn {
-    position: absolute;
-    right: 15px;
-    top: 30px;
-    background-color: #adada9;
-}
-
 .scrollable {
     overflow: auto;
 }
@@ -68,4 +54,18 @@ button {
     left: 30px;
     right: 100px;
     bottom: 0px;
+}
+
+#send-message-btn {
+    position: absolute;
+    right: 15px;
+    bottom: 30px;
+    background-color: #f7a628;
+}
+
+#logout-btn {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    background-color: #adada9;
 }
