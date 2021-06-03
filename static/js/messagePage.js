@@ -68,7 +68,7 @@ function getHistoryMessages() {
 function logOut() {
     const port = window.location.port == "" ? "": ":" + window.location.port
     const url = "http://" + window.location.hostname + port + "/logout"
-    window.location.href = url;
+    window.location.replace = url;
 }
 
 // append history messages to the message board
